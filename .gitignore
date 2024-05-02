@@ -30,7 +30,6 @@
 # composer
 /composer.phar
 composer.lock
-symfony.lock
 
 # npm
 package-lock.json
