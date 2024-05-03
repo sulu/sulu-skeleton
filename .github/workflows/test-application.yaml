@@ -117,16 +117,14 @@ jobs:
               working-directory: ${{ matrix.working-directory }}
 
             - name: Build sulu
-              run: bin/adminconsole sulu:build dev --no-interaction
+              run: bin/adminconsole sulu:build dev --env dev --no-interaction
               env: ${{ matrix.env }}
               working-directory: ${{ matrix.working-directory }}
 
-            - name: Test PHPCR
+            - name: Test phpcr
               run: |
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env dev --no-interaction
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env test --no-interaction
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env stage --no-interaction
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env prod --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env dev --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env prod --no-interaction
               env: ${{ matrix.env }}
               working-directory: ${{ matrix.working-directory }}
 
@@ -243,14 +241,12 @@ jobs:
                   dependency-versions: 'highest'
 
             - name: Build sulu
-              run: bin/adminconsole sulu:build dev --no-interaction
+              run: bin/adminconsole sulu:build dev --env dev --no-interaction
 
-            - name: Test PHPCR
+            - name: Test phpcr
               run: |
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env dev --no-interaction
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env test --no-interaction
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env stage --no-interaction
-                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env prod --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env dev --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env prod --no-interaction
 
             - name: Build container
               run: |
