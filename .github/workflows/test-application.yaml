@@ -122,7 +122,11 @@ jobs:
               working-directory: ${{ matrix.working-directory }}
 
             - name: Test PHPCR
-              run: bin/console doctrine:phpcr:node:dump /cmf/example/contents --no-interaction
+              run: |
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env dev --no-interaction
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env test --no-interaction
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env stage --no-interaction
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env prod --no-interaction
               env: ${{ matrix.env }}
               working-directory: ${{ matrix.working-directory }}
 
@@ -242,7 +246,11 @@ jobs:
               run: bin/adminconsole sulu:build dev --no-interaction
 
             - name: Test PHPCR
-              run: bin/console doctrine:phpcr:node:dump /cmf/example/contents --no-interaction
+              run: |
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env dev --no-interaction
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env test --no-interaction
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env stage --no-interaction
+                  bin/console doctrine:phpcr:node:dump /cmf/example/contents --env prod --no-interaction
 
             - name: Build container
               run: |
