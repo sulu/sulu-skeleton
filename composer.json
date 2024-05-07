@@ -26,6 +26,12 @@
         "docs": "https://docs.sulu.io/",
         "chat": "https://sulu.io/services-and-support#chat"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:alexander-schranz/sulu.git"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "ext-ctype": "*",
@@ -41,17 +47,17 @@
         "scheb/2fa-email": "^7.2",
         "scheb/2fa-trusted-device": "^7.2",
         "stof/doctrine-extensions-bundle": "^1.11",
-        "sulu/sulu": "~2.6.3",
-        "symfony/config": "^6.4",
-        "symfony/dotenv": "^6.4",
+        "sulu/sulu": "dev-feature/symfony-7-support as 2.6.2",
+        "symfony/config": "^7.0",
+        "symfony/dotenv": "^7.0",
         "symfony/flex": "^1.17 || ^2.0",
-        "symfony/framework-bundle": "^6.4",
-        "symfony/mailer": "^6.4",
-        "symfony/monolog-bridge": "^6.4",
-        "symfony/monolog-bundle": "^3.10",
-        "symfony/runtime": "^6.4",
-        "symfony/security-bundle": "^6.4",
-        "symfony/twig-bundle": "^6.4"
+        "symfony/framework-bundle": "^7.0",
+        "symfony/mailer": "^7.0",
+        "symfony/monolog-bridge": "^7.0",
+        "symfony/monolog-bundle": "^3.4",
+        "symfony/runtime": "^7.0",
+        "symfony/security-bundle": "^7.0",
+        "symfony/twig-bundle": "^7.0"
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0",
@@ -66,13 +72,13 @@
         "phpunit/phpunit": "^9.6",
         "rector/rector": "^1.0",
         "sulu/sulu-rector": "^1.0",
-        "symfony/browser-kit": "^6.4",
-        "symfony/css-selector": "^6.4",
-        "symfony/debug-bundle": "^6.4",
-        "symfony/error-handler": "^6.4",
-        "symfony/phpunit-bridge": "^6.4",
+        "symfony/browser-kit": "^7.0",
+        "symfony/css-selector": "^7.0",
+        "symfony/debug-bundle": "^7.0",
+        "symfony/error-handler": "^7.0",
+        "symfony/phpunit-bridge": "^7.0",
         "symfony/thanks": "^1.2",
-        "symfony/web-profiler-bundle": "^6.4",
+        "symfony/web-profiler-bundle": "^7.0",
         "thecodingmachine/phpstan-strict-rules": "^1.0"
     },
     "conflict": {
@@ -192,7 +198,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "6.4.*"
+            "require": "7.0.*"
         }
     }
 }
