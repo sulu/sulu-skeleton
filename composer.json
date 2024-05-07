@@ -34,8 +34,9 @@
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "friendsofsymfony/http-cache-bundle": "^2.17",
         "handcraftedinthealps/zendsearch": "^2.1",
-        "jackalope/jackalope-doctrine-dbal": "^1.10",
+        "jackalope/jackalope-doctrine-dbal": "^1.10 || ^2.0",
         "phpcr/phpcr-migrations-bundle": "^1.5",
+        "phpcr/phpcr-shell": "^1.5",
         "scheb/2fa-bundle": "^7.2",
         "scheb/2fa-email": "^7.2",
         "scheb/2fa-trusted-device": "^7.2",
@@ -55,7 +56,6 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.41",
         "jangregor/phpstan-prophecy": "^1.0",
-        "phpcr/phpcr-shell": "^1.5",
         "phpspec/prophecy-phpunit": "^2.1",
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan": "^1.10",
