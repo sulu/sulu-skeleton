@@ -2,7 +2,6 @@
 framework:
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true
-    annotations: true # required for rest routing loader to be true
     http_method_override: true # enable also in the index.php
     handle_all_throwables: true
 
