@@ -82,7 +82,7 @@ jobs:
 
         steps:
             - name: Checkout project
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
               with:
                   path: ${{ matrix.checkout-directory }}
 
@@ -116,7 +116,14 @@ jobs:
               working-directory: ${{ matrix.working-directory }}
 
             - name: Build sulu
-              run: bin/adminconsole sulu:build dev --no-interaction
+              run: bin/adminconsole sulu:build dev --env dev --no-interaction
+              env: ${{ matrix.env }}
+              working-directory: ${{ matrix.working-directory }}
+
+            - name: Test phpcr
+              run: |
+                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env dev --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env prod --no-interaction
               env: ${{ matrix.env }}
               working-directory: ${{ matrix.working-directory }}
 
@@ -154,7 +161,7 @@ jobs:
               working-directory: ${{ matrix.working-directory }}
 
             - name: Install and configure Node
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
 
@@ -192,7 +199,7 @@ jobs:
                       node-version: '16'
                       npm-version: '6'
                       mysql-version: '8.0'
-                      php-extensions: 'ctype, iconv, intl, mysql, pdo_mysql, php_fileinfo, imagick'
+                      php-extensions: 'ctype, iconv, intl, mysql, pdo_mysql, php_fileinfo, gd, sodium, zip'
                       tools: 'composer:v2'
 
         steps:
@@ -233,18 +240,23 @@ jobs:
                   dependency-versions: 'highest'
 
             - name: Build sulu
-              run: bin/adminconsole sulu:build dev --no-interaction
+              run: php bin/adminconsole sulu:build dev --env dev --no-interaction
+
+            - name: Test phpcr
+              run: |
+                  php bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env dev --no-interaction
+                  php bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env prod --no-interaction
 
             - name: Build container
               run: |
-                  bin/adminconsole cache:clear --env dev
-                  bin/websiteconsole cache:clear --env dev
-                  bin/adminconsole cache:clear --env test
-                  bin/websiteconsole cache:clear --env test
-                  bin/adminconsole cache:clear --env stage
-                  bin/websiteconsole cache:clear --env stage
-                  bin/adminconsole cache:clear --env prod
-                  bin/websiteconsole cache:clear --env prod
+                  php bin/adminconsole cache:clear --env dev
+                  php bin/websiteconsole cache:clear --env dev
+                  php bin/adminconsole cache:clear --env test
+                  php bin/websiteconsole cache:clear --env test
+                  php bin/adminconsole cache:clear --env stage
+                  php bin/websiteconsole cache:clear --env stage
+                  php bin/adminconsole cache:clear --env prod
+                  php bin/websiteconsole cache:clear --env prod
 
             - name: Lint Code
               run: |
@@ -257,10 +269,10 @@ jobs:
               run: composer test
 
             - name: Test download-language script
-              run: bin/adminconsole sulu:admin:download-language nl
+              run: php bin/adminconsole sulu:admin:download-language nl
 
             - name: Install and configure Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
 
