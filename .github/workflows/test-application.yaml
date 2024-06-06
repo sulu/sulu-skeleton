@@ -123,8 +123,8 @@ jobs:
 
             - name: Test phpcr
               run: |
-                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env dev --no-interaction
-                  bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env prod --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/website/contents" --env dev --no-interaction
+                  bin/console doctrine:phpcr:node:dump "/cmf/website/contents" --env prod --no-interaction
               env: ${{ matrix.env }}
               working-directory: ${{ matrix.working-directory }}
 
@@ -245,8 +245,8 @@ jobs:
 
             - name: Test phpcr
               run: |
-                  php bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env dev --no-interaction
-                  php bin/console doctrine:phpcr:node:dump "/cmf/example/contents" --env prod --no-interaction
+                  php bin/console doctrine:phpcr:node:dump "/cmf/website/contents" --env dev --no-interaction
+                  php bin/console doctrine:phpcr:node:dump "/cmf/website/contents" --env prod --no-interaction
 
             - name: Build container
               run: |
