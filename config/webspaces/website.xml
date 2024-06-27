@@ -4,8 +4,8 @@
           xsi:schemaLocation="http://schemas.sulu.io/webspace/webspace http://schemas.sulu.io/webspace/webspace-1.1.xsd">
     <!-- See: http://docs.sulu.io/en/latest/book/webspaces.html how to configure your webspace-->
 
-    <name>example.com</name>
-    <key>example</key>
+    <name>Website</name>
+    <key>website</key>
 
     <localizations>
         <!-- See: http://docs.sulu.io/en/latest/book/localization.html how to add new localizations -->
@@ -36,8 +36,8 @@
 
     <portals>
         <portal>
-            <name>example.com</name>
-            <key>example</key>
+            <name>Website</name>
+            <key>website</key>
 
             <environments>
                 <environment type="prod">
