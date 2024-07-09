@@ -17,6 +17,12 @@
         <default-template type="home">homepage</default-template>
     </default-templates>
 
+    <!-- See: https://docs.sulu.io/en/latest/book/webspaces.html#excluded-templates-optional
+    <excluded-templates>
+        <excluded-template>other</excluded-template>
+    </excluded-templates>
+    -->
+
     <templates>
         <template type="search">search/search</template>
         <!-- See: http://docs.sulu.io/en/latest/cookbook/custom-error-page.html how to create a custom error page -->
