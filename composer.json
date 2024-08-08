@@ -26,6 +26,12 @@
         "docs": "https://docs.sulu.io/",
         "chat": "https://sulu.io/services-and-support#chat"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:alexander-schranz/SuluArticleBundle.git"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "ext-ctype": "*",
@@ -41,6 +47,9 @@
         "scheb/2fa-email": "^7.2",
         "scheb/2fa-trusted-device": "^7.2",
         "stof/doctrine-extensions-bundle": "^1.11",
+        "sulu/article-bundle": "dev-feature/content-article-repository as 3.0.0",
+        "sulu/content-bundle": "^0.7.1 || ^0.8",
+        "sulu/messenger": "^0.2.3",
         "sulu/sulu": "~2.6.4",
         "symfony/config": "^7.1",
         "symfony/dotenv": "^7.1",
