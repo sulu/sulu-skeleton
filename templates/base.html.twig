@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% block meta %}
-        {% include "@SuluWebsite/Extension/seo.html.twig" with {
-            "seo": extension.seo|default([]),
-            "content": content|default([]),
-            "localizations": localizations|default([]),
-            "shadowBaseLocale": shadowBaseLocale|default(),
-        } %}
+        {{ include('@SuluWebsite/Extension/seo.html.twig', {
+            seo: extension.seo|default([]),
+            content: content|default([]),
+            localizations: localizations|default([]),
+            shadowBaseLocale: shadowBaseLocale|default(),
+        }) }}
     {% endblock %}
 
     {% block style %}{% endblock %}
