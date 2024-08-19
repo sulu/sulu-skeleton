@@ -62,5 +62,6 @@ phpstan.neon
 ###< php-cs-fixer/shim ###
 
 ###> vincentlanglet/twig-cs-fixer ###
+/.twig-cs-fixer.php
 /.twig-cs-fixer.cache
 ###< vincentlanglet/twig-cs-fixer ###
