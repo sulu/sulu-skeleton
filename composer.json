@@ -168,7 +168,7 @@
         "lint-twig": "@php bin/console lint:twig templates/",
         "lint-xliff": "@php bin/console lint:xliff translations/",
         "lint-translations": [
-            "@php bin/console debug:translation --all en --only-missing"
+            "@php bin/console debug:translation en --only-missing"
         ],
         "lint-yaml": "@php bin/console lint:yaml config/ --parse-tags",
         "lint-container": [
