@@ -143,6 +143,8 @@
             "@lint-twig",
             "@lint-twig-cs",
             "@lint-yaml",
+            "@lint-xliff",
+            "@lint-translations",
             "@lint-container",
             "@lint-composer",
             "@lint-doctrine"
@@ -169,6 +171,10 @@
         "lint-twig-cs": "@php vendor/bin/twig-cs-fixer lint",
         "lint-composer": "@composer validate --no-check-publish --strict",
         "lint-twig": "@php bin/console lint:twig templates/",
+        "lint-xliff": "@php bin/console lint:xliff translations/",
+        "lint-translations": [
+            "@php bin/console debug:translation en --only-missing"
+        ],
         "lint-yaml": "@php bin/console lint:yaml config/ --parse-tags",
         "lint-container": [
             "@php bin/console lint:container --env dev",
