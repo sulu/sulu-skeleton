@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 $finder = (new PhpCsFixer\Finder())
     ->in(__DIR__)
+    ->ignoreDotFiles(false)
     ->exclude('var')
     ->notName('bundles.php');
 
