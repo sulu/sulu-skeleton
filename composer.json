@@ -70,7 +70,6 @@
         "symfony/css-selector": "^6.3",
         "symfony/debug-bundle": "^6.3",
         "symfony/error-handler": "^6.3",
-        "symfony/phpunit-bridge": "^6.3",
         "symfony/thanks": "^1.2",
         "symfony/web-profiler-bundle": "^6.3",
         "thecodingmachine/phpstan-strict-rules": "^1.0"
@@ -124,7 +123,7 @@
             "@php bin/adminconsole doctrine:database:create --env test",
             "@php bin/adminconsole doctrine:schema:create --env test"
         ],
-        "test": "@php bin/phpunit",
+        "test": "@php vendor/bin/phpunit",
         "test-with-coverage": "@test --coverage-php var/reports/coverage.php --coverage-cobertura=var/reports/cobertura-coverage.xml --coverage-html var/reports/html --log-junit var/reports/junit.xml",
         "lint": [
             "@phpstan",
