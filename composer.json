@@ -30,7 +30,7 @@
         "php": "^8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/doctrine-bundle": "^2.12",
+        "doctrine/doctrine-bundle": "^2.13",
         "doctrine/doctrine-fixtures-bundle": "^3.6",
         "friendsofsymfony/http-cache-bundle": "^3.0",
         "handcraftedinthealps/zendsearch": "^2.1",
