@@ -97,10 +97,11 @@ jobs:
 
             - name: Install composer dependencies
               if: ${{ !matrix.create-project }}
-              uses: ramsey/composer-install@v1
+              uses: ramsey/composer-install@v3
               with:
-                  composer-options: '--no-cache --working-dir=${{ matrix.working-directory }}'
+                  composer-options: '--no-cache'
                   dependency-versions: 'highest'
+                  working-directory: "${{ matrix.working-directory }}"
 
             - name: Create project
               if: ${{ matrix.create-project }}
@@ -235,7 +236,7 @@ jobs:
                       default-authentication-plugin=mysql_native_password
 
             - name: Install composer dependencies
-              uses: ramsey/composer-install@v1
+              uses: ramsey/composer-install@v3
               with:
                   composer-options: '--no-cache'
                   dependency-versions: 'highest'
