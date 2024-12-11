@@ -23,3 +23,7 @@ when@test:
         test: true
         session:
             storage_factory_id: session.storage.factory.mock_file
+
+when@stage:
+    framework:
+        disallow_search_engine_index: true
